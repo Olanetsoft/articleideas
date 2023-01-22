@@ -88,7 +88,7 @@
   padding: 0;  
   margin: 0 auto;
   margin-top: 1rem;
-  align-items: center;
+  align-items: center!important;
   gap: 1rem;
 }
 
@@ -132,11 +132,11 @@ gap: 0.3rem;
   flex-wrap: wrap;
   display: flex;    
   align-items: center;  
-  margin: 0 auto;
+  margin: 0 auto;  
   gap: 1rem;  
-  margin-top: 1rem;    
+  margin-top: 1rem;        
   flex-wrap: wrap;  
-  max-width: 50%;
+  max-width: auto;
 }
 
 .side{
@@ -164,34 +164,35 @@ gap: 0.3rem;
   Screen = B/w 768px to 1024px
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .main{
-    
-  }
+
   
 }
 
 /* Device = Low Resolution Tablets, Mobiles (Landscape)
 Screen = B/w 481px to 767px*/
 @media (min-width: 481px) and (max-width: 767px) { 
+  
     .options{    
-      display: flex;    
-      flex-wrap: wrap;    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-width: 10rem;
+    flex-wrap: wrap;
+    
    }   
 
-   .form{
-      width: 100%!important;
-    }
+   
 }
 
 /* Device = Most of the Smartphones Mobiles (Portrait)
 Screen = B/w 320px to 479px*/
 
 @media (min-width: 320px) and (max-width: 480px) {
-
-   .options{    
-    display: flex;    
-    flex-wrap: wrap;
-   }
+.options{    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-width: 10rem;
+    flex-wrap: wrap;    
+   }   
    
 .form{
   width: 100%!important;
