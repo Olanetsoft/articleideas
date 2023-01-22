@@ -109,7 +109,7 @@ export default function Home() {
               <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                   <div class="overflow-hidden">
-                    <table class="w-4/5 mt-5" style={{ margin: '0 auto' }}>
+                    <div class="w-4/5 mt-5" style={{ margin: '0 auto' }}>
                       {' '}
                       <thead class="bg-white border-b">
                         <tr>
@@ -121,17 +121,20 @@ export default function Home() {
                           </th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <ol
+                        class="bg-gray-100 border-b"
+                        style={{ listStyle: 'none' }}
+                      >
                         {[{}].map((item) => (
                           <>
-                            <tr class="bg-gray-100 border-b">
-                              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap font-medium">
+                            <li class="bg-gray-100 border-b">
+                              <span class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap font-medium">
                                 <a href="#" style={{ color: 'blue' }}>
                                   Easily Create An NFT App Using The New Infura
                                   NFT SDK TypeScript
                                 </a>
-                              </td>
-                            </tr>
+                              </span>
+                            </li>
                             <tr class="bg-gray-100 border-b">
                               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap font-medium">
                                 <a href="#" style={{ color: 'blue' }}>
@@ -142,8 +145,8 @@ export default function Home() {
                             </tr>
                           </>
                         ))}
-                      </tbody>
-                    </table>
+                      </ol>
+                    </div>
                   </div>
                 </div>
               </div>
