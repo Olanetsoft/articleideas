@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
+import { Nav } from '@/components/Nav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,108 +15,119 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Nav />
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.js</code>
-          </p>
+        <div className={styles.container}>
+          <div className={styles.searchWrapper}>
+            <form>
+              <span className={styles.form}>
+                <span className={styles.searchIcons}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                    />
+                  </svg>
+                </span>
+                <span className={styles.searchInput}>
+                  <input type="text" placeholder="Searching anything" />
+                </span>
+                <span className={styles.searchButton}>
+                  <button>Search</button>
+                </span>
+              </span>
+            </form>
+          </div>
+          <div className={styles.option_container}>
+            <ul className={styles.options}>
+              <li className={styles.optionsWrapper}>
+                <label>SEO Enabled</label>
+                <input type="checkbox" />
+              </li>
+              <li className={styles.optionsWrapper}>
+                {' '}
+                <label>Technical</label>
+                <input type="checkbox" />
+              </li>
+              <li className={styles.optionsWrapper}>
+                {' '}
+                <label>Non Technical</label>
+                <input type="checkbox" />
+              </li>
+              <li className={styles.optionsWrapper}>
+                {' '}
+                <label>10 Result</label>
+                <input type="checkbox" />
+              </li>
+            </ul>
+            <span className={styles.optionsWrapper}>
+              <label>Field</label>
+              <select className={styles.selectWrapper}>
+                {[
+                  { value: 'Frontend' },
+                  { value: 'Backend' },
+                  { value: 'Cloud' },
+                  { value: 'UI/UX' },
+                  { value: 'Web3' },
+                ].map((item) => (
+                  <option value={item} key={item}>
+                    {item.value}
+                  </option>
+                ))}
+                <option value="" key="" className={styles.selectWrapper}>
+                  Frontend
+                </option>
+              </select>
+            </span>
+          </div>
+
           <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+            <div class="flex flex-col">
+              <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+                <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                  <div class="overflow-hidden">
+                    <table
+                      class="w-4/5 mt-0 mb-0 ml-0"
+                      style={{ margin: '0 auto' }}
+                    >
+                      {' '}
+                      <thead class="bg-white border-b">
+                        <tr>
+                          <th
+                            scope="col"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                          >
+                            Generated Topics
+                          </th>
+                        </tr>
+                      </thead>
+                      {[{}].map((item) => (
+                        <>
+                          <tbody>
+                            <tr class="bg-gray-100 border-b">
+                              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap font-medium">
+                                <a href="#" style={{ color: 'blue' }}>
+                                  Mark
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </>
+                      ))}
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
         </div>
       </main>
     </>
