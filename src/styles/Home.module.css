@@ -1,18 +1,19 @@
 .main {
-  display: flex;
+  display: flex;  
+  color: white;
   flex-direction: column;
-  justify-content: space-between;
-  /* align-items: center; */
+  justify-content: space-between;  
   padding: 2rem;  
-  min-height: 100vh;
+  min-height: 89vh;
   width: 100%!important;
   margin: 0 auto;
+  
 }
+.dark{background: black;}
 .container{
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  /* align-items: center; */    
+  flex-direction: column;   
 }
   .searchWrapper{
   display: flex;
@@ -30,33 +31,29 @@
   
 }
 .searchWrapper form .form{
-position: relative;
-padding: 1rem;
-display: flex;
-align-items: center;
-/* min-width: 20rem; */
-justify-content: space-between;
-border-radius: 0.5rem;
-background: white;
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
   min-height: 3rem;
-  width: 80%;
-  /* min-width: 30rem; */
+  width: 80%;  
   gap: 1rem;
   margin: 0 auto;
-
 }
 
 .searchInput {
-  min-width: 80%;
+  min-width: 90%;
 }
+
 .searchInput input{
   width: 100%;
   outline: none;
-
 }
-
 
 .searchButton button{
   position: absolute;
@@ -69,21 +66,23 @@ background: white;
   cursor: pointer;
   border-radius: 0.5rem;
   color: white;
-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
+
 .searchButton button:hover{
   background: rgb(226, 43, 43);
 }
+
 .options{
   display: flex;
   list-style: none;
-  padding: 0;
-  
+  padding: 0;  
   margin: 0 auto;
   margin-top: 1rem;
   align-items: center;
   gap: 1rem;
 }
+
 .optionsWrapper{
 display: flex;
 font-size: 1rem;
@@ -97,12 +96,13 @@ gap: 0.3rem;
 .selectWrapper{
   display: flex;  
   outline: none;
+  color: black;
   min-width: 5rem;
   
 }
+
 .selectWrapper:focus{
-  display: flex;
-  
+  display: flex;  
   outline: none;
 }
 
@@ -119,47 +119,59 @@ gap: 0.3rem;
 
 
 .option_container{
+  position: relative;          
+  flex-wrap: wrap;
   display: flex;    
   align-items: center;  
   margin: 0 auto;
   gap: 1rem;  
-  margin-top: 1rem;
-  
-  flex-wrap: wrap;
+  margin-top: 1rem;  
+  flex-wrap: wrap;  
+  max-width: 50%;
 }
 
-/* Device = Laptops, Desktops  */
-@media (min-width: 1025px) and (max-width: 1280px) {
-  
-    
+.side{
+  display: flex;
+  gap: 1rem;
+  width: auto;
+}
+.side span{
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 1rem;    
 }
 
-/* Device = Tablets, Ipads (portrait) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .main{
-    background: red;
-  }
-  .searchInput{
-    background: red;
-  }
+.nav__container{
+  background: teal!important;
+  display: flex;
+  min-height: 5rem;
 }
 
+.theme__icon{  
+  background: rgb(193, 182, 182);
+}
 /* Device = Tablets, Ipads (landscape)
   Screen = B/w 768px to 1024px
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .main{
-    background: green;
+    
   }
   
 }
 
 /* Device = Low Resolution Tablets, Mobiles (Landscape)
 Screen = B/w 481px to 767px*/
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) { 
+    .options{    
+      display: flex;    
+      flex-wrap: wrap;    
+   }   
 
-  
-    
+   .form{
+      width: 100%!important;
+    }
 }
 
 /* Device = Most of the Smartphones Mobiles (Portrait)
@@ -167,5 +179,12 @@ Screen = B/w 320px to 479px*/
 
 @media (min-width: 320px) and (max-width: 480px) {
 
+   .options{    
+    display: flex;    
+    flex-wrap: wrap;
+   }
    
+.form{
+  width: 100%!important;
+}
 }

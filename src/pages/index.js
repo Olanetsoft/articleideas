@@ -3,10 +3,19 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import { Nav } from '@/components/Nav'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [isDark, setIsDark] = useState(false)
+  const onSubmitHandler = (e) => {
+    e.preventDefault()
+  }
+  const onIsDark = (dark) => {
+    setIsDark(dark)
+    console.log(isDark)
+  }
   return (
     <>
       <Head>
@@ -15,11 +24,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav />
-      <main className={styles.main}>
+      <Nav onIsDark={onIsDark} />
+      <main className={!isDark ? styles.main : ` ${styles.main} bg-[#0d1a2e]`}>
         <div className={styles.container}>
           <div className={styles.searchWrapper}>
-            <form>
+            <form onSubmit={onSubmitHandler}>
               <span className={styles.form}>
                 <span className={styles.searchIcons}>
                   <svg
@@ -89,15 +98,12 @@ export default function Home() {
             </span>
           </div>
 
-          <div>
+          <div style={{ marginTop: '2rem' }}>
             <div class="flex flex-col">
               <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
                 <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                   <div class="overflow-hidden">
-                    <table
-                      class="w-4/5 mt-0 mb-0 ml-0"
-                      style={{ margin: '0 auto' }}
-                    >
+                    <table class="w-4/5 mt-5" style={{ margin: '0 auto' }}>
                       {' '}
                       <thead class="bg-white border-b">
                         <tr>
@@ -109,19 +115,28 @@ export default function Home() {
                           </th>
                         </tr>
                       </thead>
-                      {[{}].map((item) => (
-                        <>
-                          <tbody>
+                      <tbody>
+                        {[{}].map((item) => (
+                          <>
                             <tr class="bg-gray-100 border-b">
                               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap font-medium">
                                 <a href="#" style={{ color: 'blue' }}>
-                                  Mark
+                                  Easily Create An NFT App Using The New Infura
+                                  NFT SDK TypeScript
                                 </a>
                               </td>
                             </tr>
-                          </tbody>
-                        </>
-                      ))}
+                            <tr class="bg-gray-100 border-b">
+                              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap font-medium">
+                                <a href="#" style={{ color: 'blue' }}>
+                                  Easily Create An NFT App Using The New Infura
+                                  NFT SDK TypeScript
+                                </a>
+                              </td>
+                            </tr>
+                          </>
+                        ))}
+                      </tbody>
                     </table>
                   </div>
                 </div>
