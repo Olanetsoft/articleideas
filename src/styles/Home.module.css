@@ -1,15 +1,23 @@
 .main {
   display: flex;  
-  color: white;
+  color: black;
   flex-direction: column;
   justify-content: space-between;  
   padding: 2rem;  
   min-height: 89vh;
   width: 100%!important;
   margin: 0 auto;
+  margin-top: 2rem;
   
 }
-.dark{background: black;}
+.dark{background: black;
+  color: white!important;
+  
+}
+.dark__select{
+  color: white!important;
+  
+}
 .container{
   display: flex;
   justify-content: center;
@@ -53,6 +61,7 @@
 .searchInput input{
   width: 100%;
   outline: none;
+  color: black!important;
 }
 
 .searchButton button{
@@ -125,7 +134,7 @@ gap: 0.3rem;
   align-items: center;  
   margin: 0 auto;
   gap: 1rem;  
-  margin-top: 1rem;  
+  margin-top: 1rem;    
   flex-wrap: wrap;  
   max-width: 50%;
 }
