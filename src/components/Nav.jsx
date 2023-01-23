@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export const Nav = ({ onIsDark }) => {
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
   const themeHander = () => {
     setIsDark((prev) => {
       onIsDark(!prev)
